@@ -1,0 +1,48 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters (basierend auf deinen Angaben)
+#--------------------------------------------------------------------------------------------
+Camera.fx: 566.857
+Camera.fy: 566.857
+Camera.cx: 512.0
+Camera.cy: 512.0
+
+Camera.k1: -0.147548
+Camera.k2: 0.079089
+Camera.p1: -0.013005
+Camera.p2: 0.0
+
+Camera.width: 1024
+Camera.height: 1024
+
+Camera.fps: 1
+
+# Stereo baseline * fx = 0.0600216 m * 566.857 px = ~34.02
+Camera.bf: 34.0237
+
+Camera.RGB: 0  # 0 = BGR, 1 = RGB; auf 0 gesetzt, falls Graustufen
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+ORBextractor.nFeatures: 1000
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500
+

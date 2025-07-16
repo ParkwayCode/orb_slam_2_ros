@@ -1,0 +1,52 @@
+<launch>
+
+
+  <!-- ORB_SLAM2 Node -->
+  <node name="orb_slam2_stereo" pkg="orb_slam2_ros"
+        type="orb_slam2_ros_stereo" output="screen">
+
+    <!-- Kamera-Topics -->
+    <remap from="image_left/image_color_rect" to="/camera/left/image_rect_color"/>
+    <remap from="image_right/image_color_rect" to="/camera/right/image_rect_color"/>
+    <remap from="image_left/camera_info" to="/camera/left/camera_info"/>
+
+    <!-- SLAM Einstellungen -->
+    <param name="publish_pointcloud" type="bool" value="true"/>
+    <param name="publish_pose" type="bool" value="true"/>
+    <param name="localize_only" type="bool" value="false"/>
+    <param name="reset_map" type="bool" value="false"/>
+    <param name="load_map" type="bool" value="false"/>
+
+    <!-- Kamera-Parameter -->
+    <param name="load_calibration_from_cam" type="bool" value="false"/>
+
+    <param name="camera_fx" type="double" value="566.857"/>
+    <param name="camera_fy" type="double" value="566.51"/>
+    <param name="camera_cx" type="double" value="502.206"/>
+    <param name="camera_cy" type="double" value="499.039"/>
+
+    <param name="camera_k1" type="double" value="-0.147548"/>
+    <param name="camera_k2" type="double" value="0.079089"/>
+    <param name="camera_p1" type="double" value="-0.013005"/>
+    <param name="camera_p2" type="double" value="0.0"/>
+    <param name="camera_k3" type="double" value="0.0"/> 
+    <param name="camera_fps" type="double" value="1"/>
+    <param name="camera_width" type="double" value="1024"/>
+    <param name="camera_height" type="double" value="1024"/>
+
+    <!-- fx × baseline (m): 566.857 * 0.0600216 = 34.023664 -->
+    <param name="camera_baseline" type="double" value="34.023664"/>
+
+    <!-- Pfade -->
+    <param name="voc_file" type="string" value="$(find orb_slam2_ros)/orb_slam2/Vocabulary/ORBvoc.txt"/>
+    <param name="settings_file" type="string" value="$(find orb_slam2_ros)/orb_slam2/config/cameraSettings.yaml"/>
+
+    <!-- Frames -->
+    <param name="pointcloud_frame_id" type="string" value="map"/>
+    <param name="camera_frame_id" type="string" value="camera_left"/>
+    <param name="target_frame_id" type="string" value="map"/>
+    <param name="child_frame_id" type="string" value="camera_left"/>
+
+  </node>
+</launch>
+
