@@ -1,9 +1,7 @@
-# ORB-SLAM2
-
 
 # ORB-SLAM2 ROS Pose Estimation Projekt
 
-Dieses Projekt basiert auf **ORB-SLAM2** mit ROS und hat das Ziel, die **Kamerapose** für einen vorgegebenen Datensatz zu bestimmen und mit der **Ground Truth (GT)** zu vergleichen.
+Dieses Projekt basiert auf **ORB-SLAM2** mit ROS und hat das Ziel, die **Kamerapose** für einen vorgegebenen Datensatz zu bestimmen und mit der **Ground Truth** zu vergleichen.
 
 ## Anpassungen
 
@@ -17,26 +15,18 @@ Dieses Projekt basiert auf **ORB-SLAM2** mit ROS und hat das Ziel, die **Kamerap
 ## Ergebnis
 
 Das Ergebnis der Pose-Schätzung wird in der Datei **`poseEstimationFinal.csv`** gespeichert.  
-Darin sind die geschätzten Positionen und Orientierungen der Kamera in Relation zum Ursprung (`world`-Frame) dokumentiert.
+Darin sind die geschätzten Positionen und Orientierungen der Kamera in Relation zum Ursprung dokumentiert.
 
 ## Nutzung
 
-```bash
-roslaunch orb_slam2 stereo.launch
-rosrun orb_slam2 stereo_publisher.py _image_dir:=/pfad/zum/bildordner
+  ```
+  roslaunch orb_slam2 stereo.launch
+  rosrun orb_slam2 stereo_publisher.py _image_dir:=/pfad/zum/bildordner
+  ```
 
+---------------------
 
-
-
-
-
-
-
-
-
-
-
-
+## ORB-SLAM2
 **ORB-SLAM2 Authors:** [Raul Mur-Artal](http://webdiis.unizar.es/~raulmur/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/), [J. M. M. Montiel](http://webdiis.unizar.es/~josemari/) and [Dorian Galvez-Lopez](http://doriangalvez.com/) ([DBoW2](https://github.com/dorian3d/DBoW2)).
 The original implementation can be found [here](https://github.com/raulmur/ORB_SLAM2.git).
 
